@@ -1,24 +1,41 @@
-import React from 'react';
-import Company from './Company';
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { supabase } from '../lib/supabaseClient'; // Import your Supabase client
 
-interface CompanyData {
-  id: number;
-  name: string;
-  url: string;
-  status: string;
-  // Add more fields as needed
+interface Company {
+  id: string;
+  company_name: string;
+  career_page_url: string;
+  // ... add other fields
 }
 
-interface CompanyListProps {
-  companies: CompanyData[];
-}
+const CompanyList: React.FC = () => {
+  const [companies, setCompanies] = useState<Company[]>([]);
 
-const CompanyList: React.FC<CompanyListProps> = ({ companies }) => {
+  useEffect(() => {
+    fetchCompanies();
+  }, []);
+
+  const fetchCompanies = async () => {
+    const { data, error } = await supabase
+      .from('companies')
+      .select('*');
+    if (error) console.error('Error fetching companies:', error);
+    if (data) setCompanies(data);
+  };
+
   return (
     <div>
-      {companies.map((company) => (
-        <Company key={company.id} {...company} />
-      ))}
+      <h1>Company List</h1>
+      <ul>
+        {companies.map((company) => (
+          <li key={company.id}>
+            <Link href={`/${company.id}`}>
+              <a>{company.company_name}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
