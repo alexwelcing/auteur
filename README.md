@@ -136,3 +136,194 @@ Here's how you can contribute:
 ## License
 
 Licensed under the [Apache-2.0 license](https://github.com/steven-tey/novel/blob/main/LICENSE.md).
+
+```
+auteur
+├─ .eslintrc.json
+├─ .git
+│  ├─ COMMIT_EDITMSG
+│  ├─ FETCH_HEAD
+│  ├─ HEAD
+│  ├─ config
+│  ├─ description
+│  ├─ hooks
+│  │  ├─ applypatch-msg.sample
+│  │  ├─ commit-msg.sample
+│  │  ├─ fsmonitor-watchman.sample
+│  │  ├─ post-update.sample
+│  │  ├─ pre-applypatch.sample
+│  │  ├─ pre-commit.sample
+│  │  ├─ pre-merge-commit.sample
+│  │  ├─ pre-push.sample
+│  │  ├─ pre-rebase.sample
+│  │  ├─ pre-receive.sample
+│  │  ├─ prepare-commit-msg.sample
+│  │  ├─ push-to-checkout.sample
+│  │  └─ update.sample
+│  ├─ index
+│  ├─ info
+│  │  └─ exclude
+│  ├─ logs
+│  │  ├─ HEAD
+│  │  └─ refs
+│  │     ├─ heads
+│  │     │  └─ main
+│  │     └─ remotes
+│  │        └─ origin
+│  │           ├─ HEAD
+│  │           └─ main
+│  ├─ objects
+│  │  ├─ 13
+│  │  │  └─ 40b2c45b274e11d9df7915e0ce8e68804878e1
+│  │  ├─ 19
+│  │  │  └─ 6889d7cb6e43fd467bfdf196be36b45d47df8a
+│  │  ├─ 23
+│  │  │  └─ 8c24c3fd6edc6bec51d4f9372aa7216c3c02dc
+│  │  ├─ 25
+│  │  │  └─ 48e223a949132f4eac02857368c2091cf844ee
+│  │  ├─ 27
+│  │  │  └─ d1a303384567069c671ce0c100d5b732b1d978
+│  │  ├─ 33
+│  │  │  └─ a6c8217be587d715d11711fd2cdf6b44606a73
+│  │  ├─ 3b
+│  │  │  └─ fb40fc61c2790f8301ba3262e677848f5da66e
+│  │  ├─ 6c
+│  │  │  └─ 4544b6145a68f3322719bfd88a3a963da7d6d5
+│  │  ├─ 77
+│  │  │  └─ 149b6e3ca551c85eb113c9940ed7a0e9292603
+│  │  ├─ 9f
+│  │  │  └─ fddf8c33a2b136e210eb693b26d1bdf26aba59
+│  │  ├─ a3
+│  │  │  └─ f2071d70723f99d49c316d42fd655905412d8a
+│  │  ├─ ac
+│  │  │  └─ fd6640f5e3f4a7e2c37888712ced7587092fc8
+│  │  ├─ b9
+│  │  │  └─ 181169d43004163f0098f8e76357bed961da02
+│  │  ├─ d1
+│  │  │  └─ ec87587e9c546908307f2b1731968fc564838d
+│  │  ├─ e6
+│  │  │  └─ 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+│  │  ├─ info
+│  │  └─ pack
+│  │     ├─ pack-578312f09d12730355ac5f49aec59094b68f90dc.idx
+│  │     └─ pack-578312f09d12730355ac5f49aec59094b68f90dc.pack
+│  ├─ packed-refs
+│  └─ refs
+│     ├─ heads
+│     │  └─ main
+│     ├─ remotes
+│     │  └─ origin
+│     │     ├─ HEAD
+│     │     └─ main
+│     └─ tags
+├─ .github
+│  └─ FUNDING.yml
+├─ .gitignore
+├─ LICENSE
+├─ README.md
+├─ apps
+│  └─ web
+│     ├─ .gitignore
+│     ├─ .prettierignore
+│     ├─ app
+│     │  ├─ api
+│     │  │  ├─ generate
+│     │  │  │  └─ route.ts
+│     │  │  └─ upload
+│     │  │     └─ route.ts
+│     │  ├─ favicon.ico
+│     │  ├─ layout.tsx
+│     │  ├─ opengraph-image.png
+│     │  ├─ page.tsx
+│     │  └─ providers.tsx
+│     ├─ components
+│     │  ├─ Company.tsx
+│     │  └─ CompanyList.tsx
+│     ├─ lib
+│     │  ├─ hooks
+│     │  │  └─ use-local-storage.ts
+│     │  ├─ supabaseClient.ts
+│     │  └─ utils.ts
+│     ├─ next.config.js
+│     ├─ package.json
+│     ├─ pages
+│     │  ├─ api
+│     │  │  └─ companies.js
+│     │  └─ index.js
+│     ├─ pnpm-lock.yaml
+│     ├─ postcss.config.js
+│     ├─ prettier.config.js
+│     ├─ styles
+│     │  ├─ globals.css
+│     │  └─ styles.ts
+│     ├─ tailwind.config.js
+│     ├─ tsconfig.json
+│     └─ ui
+│        ├─ editor.tsx
+│        ├─ icons
+│        │  ├─ font-default.tsx
+│        │  ├─ font-mono.tsx
+│        │  ├─ font-serif.tsx
+│        │  ├─ github.tsx
+│        │  └─ index.tsx
+│        ├─ menu.tsx
+│        └─ primitives
+│           └─ popover.tsx
+├─ package.json
+├─ packages
+│  ├─ core
+│  │  ├─ README.md
+│  │  ├─ package.json
+│  │  ├─ postcss.config.js
+│  │  ├─ src
+│  │  │  ├─ index.ts
+│  │  │  ├─ lib
+│  │  │  │  ├─ editor.ts
+│  │  │  │  ├─ hooks
+│  │  │  │  │  └─ use-local-storage.ts
+│  │  │  │  └─ utils.ts
+│  │  │  ├─ styles
+│  │  │  │  ├─ CalSans-SemiBold.otf
+│  │  │  │  ├─ fonts.ts
+│  │  │  │  ├─ index.css
+│  │  │  │  ├─ prosemirror.css
+│  │  │  │  └─ tailwind.css
+│  │  │  └─ ui
+│  │  │     ├─ editor
+│  │  │     │  ├─ bubble-menu
+│  │  │     │  │  ├─ color-selector.tsx
+│  │  │     │  │  ├─ index.tsx
+│  │  │     │  │  ├─ link-selector.tsx
+│  │  │     │  │  └─ node-selector.tsx
+│  │  │     │  ├─ default-content.tsx
+│  │  │     │  ├─ extensions
+│  │  │     │  │  ├─ custom-keymap.ts
+│  │  │     │  │  ├─ drag-and-drop.tsx
+│  │  │     │  │  ├─ image-resizer.tsx
+│  │  │     │  │  ├─ index.tsx
+│  │  │     │  │  ├─ slash-command.tsx
+│  │  │     │  │  └─ updated-image.ts
+│  │  │     │  ├─ index.tsx
+│  │  │     │  ├─ plugins
+│  │  │     │  │  └─ upload-images.tsx
+│  │  │     │  └─ props.ts
+│  │  │     └─ icons
+│  │  │        ├─ index.tsx
+│  │  │        ├─ loading-circle.tsx
+│  │  │        └─ magic.tsx
+│  │  ├─ tailwind.config.js
+│  │  ├─ tsconfig.json
+│  │  └─ tsup.config.ts
+│  ├─ tailwind-config
+│  │  ├─ package.json
+│  │  └─ tailwind.config.js
+│  └─ tsconfig
+│     ├─ base.json
+│     ├─ next.json
+│     ├─ package.json
+│     └─ react.json
+├─ pnpm-lock.yaml
+├─ pnpm-workspace.yaml
+└─ turbo.json
+
+```
