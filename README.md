@@ -1,11 +1,13 @@
 <a href="https://novel.sh">
   <img alt="Novel is a Notion-style WYSIWYG editor with AI-powered autocompletions." src="https://novel.sh/opengraph-image.png">
-  <h1 align="center">Novel</h1>
+  <h1 align="center">Auteur deploys Novels for docs</h1>
 </a>
 
 <p align="center">
-  An open-source Notion-style WYSIWYG editor with AI-powered autocompletions. 
+  Supabase data into an open-source Notion-style WYSIWYG editor with AI-powered autocompletions.
 </p>
+
+Novel is built by -->>
 
 <p align="center">
   <a href="https://news.ycombinator.com/item?id=36360789"><img src="https://img.shields.io/badge/Hacker%20News-369-%23FF6600" alt="Hacker News"></a>
