@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.6",
+    "@supabase/supabase-js": "^2.36.0",
     "@tiptap/core": "^2.0.3",
     "@tiptap/extension-color": "^2.0.3",
     "@tiptap/extension-highlight": "^2.0.3",
@@ -47,6 +48,7 @@
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.5",
     "sonner": "^0.7.0",
+    "styled-components": "^6.0.8",
     "tippy.js": "^6.3.7",
     "tiptap-markdown": "^0.8.1",
     "typescript": "4.9.5",
