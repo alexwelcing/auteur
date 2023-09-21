@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabaseClient';
 import { CompanyCard, CompanyName } from '../styles/styles'; // Importing styled components
 import '../styles/globals.css';
 import Link from 'next/link';
+import Editor from '../ui/editor';
 
 
 interface Company {
@@ -42,7 +43,8 @@ const CompanyDetail: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <>
+<Editor companyId={id as string} />
       {company ? (
         <CompanyCard>
           <CompanyName>{company.company_name || 'N/A'}</CompanyName>
@@ -59,7 +61,7 @@ const CompanyDetail: React.FC = () => {
       ) : (
         <p className="text-lg text-gray-500">Loading...</p>
       )}
-    </div>
+   </>
   );
 };
 
