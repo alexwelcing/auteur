@@ -1,18 +1,14 @@
 // Editor.tsx
-
-'use client'
-
 import { useState, useEffect } from "react";
 import { supabase } from '../lib/supabaseClient';
 
-export default function Editor({ companyId }) {
+export default function Editor({ companyId }: { companyId: string }) {
   const [saveStatus, setSaveStatus] = useState("Saved");
   const [companyInfo, setCompanyInfo] = useState({
     notes: "",
     company_name: "",
     company_type: "",
     career_page_url: "",
-    // Add other fields here
   });
   const [companyTypes, setCompanyTypes] = useState<string[]>([]);
 
@@ -76,8 +72,6 @@ export default function Editor({ companyId }) {
       </div>
 
       {/* Editor UI */}
-
-      {/* Editable Fields */}
       <div className="mt-5">
         <input
           className="mb-3 p-2 w-full rounded border"
@@ -106,8 +100,6 @@ export default function Editor({ companyId }) {
           value={companyInfo.career_page_url}
           onChange={(e) => setCompanyInfo({ ...companyInfo, career_page_url: e.target.value })}
         />
-
-        {/* Add other fields here */}
       </div>
 
       <button
@@ -116,6 +108,8 @@ export default function Editor({ companyId }) {
       >
         Save
       </button>
+
+      {/* Include CoverLetterUpdater */}
     </div>
   );
 }

@@ -2,6 +2,7 @@
 /node_modules
 /.pnp
 .pnp.js
+*.pdf
 
 node_modules
 packages/*/node_modules
@@ -48,3 +49,6 @@ packages/*/dist
 /test-results/
 /playwright-report/
 /playwright/.cache/
+apps/web/ui/Companies.csv
+.gitignore
+apps/web/ui/company.txt

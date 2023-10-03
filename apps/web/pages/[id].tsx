@@ -1,11 +1,12 @@
+// [id].tsx
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { supabase } from '../lib/supabaseClient';
-import { CompanyCard, CompanyName } from '../styles/styles'; // Importing styled components
+import { CompanyCard, CompanyName } from '../styles/styles';
 import '../styles/globals.css';
 import Link from 'next/link';
 import Editor from '../ui/editor';
-
+import axios from 'axios';
 
 interface Company {
   id: number;
@@ -29,6 +30,7 @@ const CompanyDetail: React.FC = () => {
   useEffect(() => {
     if (id) {
       fetchCompany(id as string);
+      fetchRolesWithChatGPT(id as string);
     }
   }, [id]);
 
@@ -42,27 +44,24 @@ const CompanyDetail: React.FC = () => {
     if (data) setCompany(data);
   };
 
-  return (
-    <>
-<Editor companyId={id as string} />
-      {company ? (
-        <CompanyCard>
-          <CompanyName>{company.company_name || 'N/A'}</CompanyName>
-          <p className="text-gray-500">ID: {company.id || 'N/A'}</p>
-          <p className="text-gray-500">URL: {company.url || 'N/A'}</p>
-          <p className="text-gray-500">Status: {company.status || 'N/A'}</p>
-          <p className="text-gray-500">Notes: {company.notes || 'N/A'}</p>
-          <p className="text-gray-500">Company Type: {company.company_type || 'N/A'}</p>
-          <Link className="text-gray-500" href={company.career_page_url}>Career Page Link</Link>
-          <p className="text-gray-500">Size: {company.size || 'N/A'}</p>
-          <p className="text-gray-500">Roles: {company.roles || 'N/A'}</p>
-          <p className="text-gray-500">User Rank: {company.user_rank !== null ? company.user_rank : 'N/A'}</p>
-        </CompanyCard>
-      ) : (
-        <p className="text-lg text-gray-500">Loading...</p>
-      )}
-   </>
-  );
-};
+  const fetchRolesWithChatGPT = async (companyId: string) => {
+    const apiEndpoint = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+    const apiKey = 'your-api-key-here';
 
-export default CompanyDetail;
+    const prompt = `Generate roles for company with ID ${companyId}`;
+    const maxTokens = 50;
+
+    try {
+      const response = await axios.post(apiEndpoint, {
+        prompt,
+        max_tokens: maxTokens,
+      }, {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+        }
+      });
+
+      const generatedRoles = response.data.choices[0].text;
+      // Process the generatedRoles and populate your roles table in Supabase
+    }
